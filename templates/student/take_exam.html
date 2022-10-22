@@ -1,0 +1,55 @@
+{% extends 'student/studentbase.html' %}
+{% block content %}
+{%load static%}
+
+<head>
+  <link href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+  <script src="//netdna.bootstrapcdn.com/bootstrap/3.0.0/js/bootstrap.min.js"></script>
+  <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+
+
+</head>
+<br><br>
+<div class="container my-4">
+    <div class="jumbotron">
+
+        <div class="row">
+
+            <div class="card border-info mx-4 my-4">
+                <div class="card-body text-default">
+
+                    <h4 class="card-title">Details sur l'examen :</h4>
+                    <p class="card-text">
+                        </p><ul style="list-style:decimal;">
+                            <li>Cours : {{course.course_name}}</li>
+                            <li>Nombre de question : {{total_questions}}</li>
+                            <li>Nombre de point : {{total_marks}}</li>
+                            <li>Durée : {{course.course_duration}}h</li>
+                        </ul>
+                    <p></p>
+
+
+
+                    <h4 class="card-title">Règles :</h4>
+                    <p class="card-text">
+                        </p><ul style="list-style:decimal;">
+                            <li>Toutes les questions sont des QCM (question à choix multiples)</li>
+                            <li><span class="text-danger">Un seul choix est correct parmi les réponses.</span></li>
+                            <li>Chaque question porte des notes différentes.</li>
+                            <li>Essayez de répondre le plutôt possible.</li>
+                            <li>Si vous APPUYEZ sur Actualiser ou revenez à la page précédente, une nouvelle question vous sera proposée et la question à laquelle vous vous trouviez sera comptée comme nombre de tentatives.</li>
+                            <li>Les questions sont présentées au hasard.</li>
+                            <li>Vous pourrez voir les notes immédiatement après avoir soumis la réponse.</li>
+                        </ul>
+                    <p></p>
+                    <a href="{% url 'start-exam' course.id  %}" class="btn btn-success" style="border-radius:0px;">Commencez l'examen</a>
+                </div>  
+                <div class="card-footer">Bonne Chance, Etudiants!</div>  
+            </div>  
+        </div>  
+
+    </div>
+</div>
+
+<br><br><br><br><br><br>
+{% endblock content %}
