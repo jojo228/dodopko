@@ -2,12 +2,16 @@ from django.urls import path,include
 from django.contrib import admin
 from exam import views
 from django.contrib.auth.views import LogoutView,LoginView
+from django.views.i18n import JavaScriptCatalog
+
 urlpatterns = [
    
     path('admin/', admin.site.urls),
     path('teacher/',include('teacher.urls')),
     path('student/',include('student.urls')),
-    
+
+
+    path('jsi18n', JavaScriptCatalog.as_view(), name="js-catlog"),
 
 
     path('',views.home_view,name=''),

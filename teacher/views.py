@@ -64,7 +64,8 @@ def teacher_add_exam_view(request):
     courseForm=QFORM.CourseForm()
     if request.method=='POST':
         courseForm=QFORM.CourseForm(request.POST)
-        if courseForm.is_valid():        
+        print(courseForm) 
+        if courseForm.is_valid():       
             courseForm.save()
         else:
             print("form is invalid")

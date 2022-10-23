@@ -1,6 +1,7 @@
 {% extends 'student/studentbase.html' %}
 {% block content %}
 {%load static%}
+{% load tz %}
 
 {% block scripts %}
     <script src="{% static 'main.js' %}" defer></script> 
@@ -46,7 +47,7 @@
       <tr>
 
         <td> {{t.course_name}}</td>
-        <td id="course-date"> {{t.course_date|date:"d M, Y H:m:s"}}</td>
+        <td id="course-date"> {% localtime on %}{{t.course_date|utc|date:"d M, Y H:m:s"}}{% endlocaltime %}</td>
         <td id="countdown-box"></td>
         <td><a class="btn btn-success btn-sm" style="border-radius:0px;" href="{% url 'take-exam' t.id  %}"><span class="glyphicon glyphicon-check"></span>Commencez</a></td>
       </tr>
