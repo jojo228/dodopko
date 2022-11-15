@@ -87,10 +87,10 @@ background: linear-gradient(to bottom, #d7d2cc, #304352); /* W3C, IE 10+/ Edge, 
                     {% csrf_token %}
                     <h1>Panel de connexion d'admin</h1>
 
-                     {% render_field form.username class="form-control" autocomplete="off" placeholder="Username" %}
-                     {% render_field form.password class="form-control" autocomplete="off" placeholder="Password" %}
+                     {% render_field form.username class="form-control" autocomplete="off" placeholder="Utilisateur" %}
+                     {% render_field form.password class="form-control" autocomplete="off" placeholder="Mot de passe" %}
 
-                     <input type="submit" name="" value="Admin Login">
+                     <input type="submit" name="" value="Se connecter">
 
                 </form>
             </div>
